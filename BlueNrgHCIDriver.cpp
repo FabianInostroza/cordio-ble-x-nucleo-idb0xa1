@@ -383,10 +383,10 @@ private:
     }
 
     void bluenrg_reset() {
-        /* Reset BlueNRG SPI interface. Hold reset line to 0 for 1500ms */
-        rst = 0;
-        wait_us(1500);
+        /* Reset BlueNRG SPI interface. Hold reset line to 1 for 1500ms */
         rst = 1;
+        wait_us(1500);
+        rst = 0;
 
         /* Wait for the radio to come back up */
         wait_us(100000);
